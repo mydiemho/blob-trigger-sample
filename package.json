@@ -1,0 +1,21 @@
+{
+  "name": "blob-trigger-sample",
+  "version": "1.0.0",
+  "author": "My Ho",
+  "description": "Azure Functions sample for the Serverless framework",
+  "scripts": {
+    "test": "echo \"No tests yet...\"",
+    "start": "func host start",
+    "azurite:v2": "mkdir -p AzuriteMetadataV2 && azurite -d AzuriteMetadataV2/debug.log -l AzuriteMetadataV2",
+    "azurite:v3": "mkdir -p AzuriteMetadataV3 && azurite -d AzuriteMetadataV3/debug.log -l AzuriteMetadataV3"
+  },
+  "keywords": [
+    "azure",
+    "serverless"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "serverless-azure-functions": "^1.0.0-11",
+    "azurite": "^2.7.0"
+  }
+}
