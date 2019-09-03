@@ -16,7 +16,8 @@ npm run azurite:v2  # start azurite
 1. Shell 2
 
 ```bash
-func host start
+npm i -g serverless
+sls offline
 ```
 
 1. Shell 3
@@ -28,9 +29,14 @@ func host start
 1. Monitor `Shell 2` for output
 
 ```bash
-[8/16/19 5:24:04 PM] +++++++++++++>> Blob name: sample.json
-[8/16/19 5:24:04 PM] +++++++++++++>> Blob: {"type":"Buffer","data":[123,10,32,32,34,110,97,109,101,34,58,32,34,77,121,34,10,125]}
-[8/16/19 5:24:04 PM] Executed 'Functions.storageBlob' (Succeeded, Id=a61e6b1b-aa2b-421d-99c6-292933ed5b00)
+[9/3/19 8:23:42 PM] Executing 'Functions.storageBlob' (Reason='New blob detected: blob-sample/sample-2019-09-03.json', Id=a5859f8b-b807-4fa7-a70b-31a116450ed2)
+[9/3/19 8:21:54 PM] ================= MESSAGE START =================
+[9/3/19 8:21:54 PM] Blob name:  sample-2019-09-03.json
+[9/3/19 8:21:54 PM] Blob length:  26  bytes
+[9/3/19 8:21:54 PM] Blob content: {
+[9/3/19 8:21:54 PM]   "data": "I'm a blob"
+[9/3/19 8:21:54 PM] }
+[9/3/19 8:21:54 PM] ================= MESSAGE END ================
 ```
 
 ## Azurite V3
@@ -51,7 +57,8 @@ npm run azurite:v3  # start azurite
 1. Shell 2
 
 ```bash
-func host start
+npm i -g serverless
+sls offline
 ```
 
 1. Shell 3

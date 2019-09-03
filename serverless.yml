@@ -19,27 +19,22 @@ service: blob-trigger
 
 provider:
   name: azure
-  prefix: myho
   region: eastus
+  runtime: nodejs10.x
 
 plugins:
   - serverless-azure-functions
 
 # you can add packaging information here
 package:
-  #  include:
-  #    - include-me.js
-  #    - include-me-dir/**
   exclude:
-    #    - exclude-me.js
-    #    - exclude-me-dir/**
     - local.settings.json
     - .vscode/**
 
 
 functions:
   hello:
-    handler: src/hello.handler
+    handler: src/handlers/hello.sayHello
     events:
       - http: true
         x-azure-settings:
@@ -50,10 +45,10 @@ functions:
           name: res
       
   storageBlob:
-    handler: src/storageBlob.handler
+    handler: src/handlers/storageBlob.printMessage
     events:
       - blob:
         x-azure-settings:
-          name: blob # Specifies which name it's available on `context`
-          path: blob-samples/{name}
+          name: blob # Specifies which name is available on `context`
+          path: blob-sample/{blobName}
           connection: AzureWebJobsStorage # App Setting/environment variable which contains Storage Account Connection String
